@@ -9,8 +9,9 @@ class ApiServices {
     );
 
     final convertedData = jsonDecode(response.body);
+    print("convertedData $convertedData");
 
-    final downloadList = (convertedData['products'] as List).map((e) {
+    final downloadList = (convertedData as List).map((e) {
       return ProductModel.fromJson(e);
     }).toList();
     print(downloadList);
